@@ -8,9 +8,13 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Input.html">
     <title>Account - Wohoo Libary</title>
+    
 </head>
+
 <body>
+    
     <div id="slideout-menu">
         <ul>
             <li>
@@ -65,9 +69,27 @@
         <input type="text" placeholder="Search">
     </div>
 
-    <main>
-        <h2 class="page-heading">Tạo ra các thanh để nhập tài khoản và mật khẩu ở đây</h2>
+    <main >
+        <div>
+            <center>
+            <form action="login.php" method="POST">
+            <table>
+                <caption>
+                    <h2 class="page-heading">ĐĂNG NHẬP </h2>
+                </caption>
+                <tr>
+                    <td><b>Username:</b></td>
+                    <td><input type="text" name="user" /></td>
+                </tr>
+                <tr>
+                    <td><b>Password:</b></td>
+                    <td><input type="password" name="pass" /></td>
+                </tr>
+            </table>
+           <button style="font-size: 20;">Đăng nhập</button> 
+        </form></center>          <button><a href="dangki/nhapthongtin.php">Đăng kí</a></button>
 
+        </div>
     <footer>
         <div id="left-footer">
             <h3>Quick Links</h3>
@@ -110,7 +132,7 @@
     </footer>
 
     </main>
-    <script src="main.js"></script>
+    <scrip src="main.js"></scrip>
 
 </body>
 </html>
