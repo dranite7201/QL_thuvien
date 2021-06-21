@@ -46,16 +46,14 @@
                     $tinhtrang = $sach['status'];
                     $gt = $sach['shortDescription'];
                     $dsSach = <<< EOD
-        <div class="hh-box">	
-            <div class="hh-box-promotion"></div>
-            <div class="hh-box-qua"></div>
-            <img src="{$sach['thumbnailUrl']}" class="hh-box-image"
-            <div class="hh-box-name">Tên sách: {$sach["title"]}</div>
-            <div class="hh-box-gia">Tác giả: {$tacgia}</div>
-            <div class="hh-box-gia">Giới thiệu: {$gt}</div>
-            <div class="hh-box-tinhtrang">Tình Trạng: {$tinhtrang}</div>
-        </div>
-    EOD;
+                    <div class="hh-box">
+                        <img src="{$sach['thumbnailUrl']}" class="hh-box-image">
+                        <div class="hh-box-name">Tên sách: {$sach["title"]}</div>
+                        <div class="hh-box-gia">Tác giả: {$tacgia}</div>
+                        <div class="hh-box-gt">Giới thiệu: {$gt}</div>
+                        <div class="hh-box-tinhtrang">Tình Trạng: {$tinhtrang}</div>
+                    </div>
+                EOD;
                     echo $dsSach;
                 }
                 ?>
