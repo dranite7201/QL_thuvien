@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2021 at 11:03 AM
+-- Generation Time: Jun 22, 2021 at 07:30 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -40,12 +40,9 @@ INSERT INTO `authors` (`book_id`, `author_name`) VALUES
 ('60a8a5b6ee37a8c953c95fe2', 'Charlie Collins'),
 ('60a8a5b6ee37a8c953c95fe2', 'Robi Sen'),
 ('60a8a5b6ee37a8c953c95fe2', 'W. Frank Ableson'),
+('60a8a5f6585c6a78469fad16', 'Robi Sen'),
+('60a8a5f6585c6a78469fad16', 'W. Frank Ableson'),
 ('60a8a5f9585c6a78469fad17', 'Gojko Adzic'),
-('60a8a5f9585c6a78469fad18', 'Faisal Abid'),
-('60a8a5f9585c6a78469fad18', 'Tariq Ahmed with Jon Hirschi'),
-('60a8a5fa585c6a78469fad19', 'Dan Orlando'),
-('60a8a5fa585c6a78469fad19', 'Joel Hooks'),
-('60a8a5fa585c6a78469fad19', 'John C. Bland II'),
 ('60a8a5f9585c6a78469fad18', 'Faisal Abid'),
 ('60a8a5f9585c6a78469fad18', 'Tariq Ahmed with Jon Hirschi'),
 ('60a8a5fa585c6a78469fad19', 'Dan Orlando'),
@@ -230,7 +227,7 @@ INSERT INTO `authors` (`book_id`, `author_name`) VALUES
 CREATE TABLE `books` (
   `id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `isbn` varchar(55) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `isbn` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
   `pageCount` int(11) DEFAULT NULL,
   `publishedDate` date DEFAULT NULL,
   `thumbnailUrl` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -245,6 +242,7 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `title`, `isbn`, `pageCount`, `publishedDate`, `thumbnailUrl`, `shortDescription`, `longDescription`, `status`) VALUES
 ('60a8a5b6ee37a8c953c95fe2', 'Unlocking Android', '1933988673', 416, '2009-04-01', 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg', 'Unlocking Android: A Developer\'s Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.', NULL, 'PUBLISH'),
+('60a8a5f6585c6a78469fad16', 'Android in Action, Second Edition', '1935182722', 592, '2011-01-14', 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson2.jpg', 'Android in Action, Second Edition is a comprehensive tutorial for Android developers. Taking you far beyond \"Hello Android,\" this fast-paced book puts you in the driver\'s seat as you learn important architectural concepts and implementation strategies. You\'ll master the SDK, build WebKit apps using HTML 5, and even learn to extend or replace Android\'s built-in features by building useful and intriguing examples. ', NULL, 'PUBLISH'),
 ('60a8a5f9585c6a78469fad17', 'Specification by Example', '1617290084', 0, '2011-06-03', 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/adzic.jpg', '', NULL, 'PUBLISH'),
 ('60a8a5f9585c6a78469fad18', 'Flex 3 in Action', '1933988746', 576, '2009-02-02', 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed.jpg', '', NULL, 'PUBLISH'),
 ('60a8a5fa585c6a78469fad19', 'Flex 4 in Action', '1935182420', 600, '2010-11-15', 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ahmed2.jpg', '', NULL, 'PUBLISH'),
@@ -361,17 +359,16 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`book_id`, `category`) VALUES
-('60a8a5fb585c6a78469fad1c', 'Internet'),
-('60a8a5fb585c6a78469fad1d', 'Java'),
 ('60a8a5b6ee37a8c953c95fe2', 'Mobile'),
 ('60a8a5b6ee37a8c953c95fe2', 'Open Source'),
+('60a8a5f6585c6a78469fad16', 'Java'),
 ('60a8a5f9585c6a78469fad17', 'Software Engineering'),
-('60a8a5fa585c6a78469fad1b', 'Web Development'),
-('60a8a5b6ee37a8c953c95fe2', 'Unlocking Android'),
-('60a8a5b6ee37a8c953c95fe2', 'Open Source'),
 ('60a8a5f9585c6a78469fad18', 'Internet'),
 ('60a8a5fa585c6a78469fad19', 'Internet'),
 ('60a8a5fa585c6a78469fad1a', 'Internet'),
+('60a8a5fa585c6a78469fad1b', 'Web Development'),
+('60a8a5fb585c6a78469fad1c', 'Internet'),
+('60a8a5fb585c6a78469fad1d', 'Java'),
 ('60a8a5fb585c6a78469fad1e', 'Java'),
 ('60a8a5fb585c6a78469fad1f', 'Web Development'),
 ('60a8a5fc585c6a78469fad20', 'Internet'),
@@ -484,7 +481,7 @@ INSERT INTO `categories` (`book_id`, `category`) VALUES
 -- Indexes for table `authors`
 --
 ALTER TABLE `authors`
-  ADD KEY `FK_BOOKSAUTHORS` (`book_id`);
+  ADD PRIMARY KEY (`book_id`,`author_name`);
 
 --
 -- Indexes for table `books`
@@ -496,7 +493,7 @@ ALTER TABLE `books`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
-  ADD KEY `FK_BOOKSCATEGORIES` (`book_id`);
+  ADD PRIMARY KEY (`book_id`,`category`);
 
 --
 -- Constraints for dumped tables
@@ -506,13 +503,13 @@ ALTER TABLE `categories`
 -- Constraints for table `authors`
 --
 ALTER TABLE `authors`
-  ADD CONSTRAINT `FK_BOOKSAUTHORS` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`);
+  ADD CONSTRAINT `FK_booksauthor` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`);
 
 --
 -- Constraints for table `categories`
 --
 ALTER TABLE `categories`
-  ADD CONSTRAINT `FK_BOOKSCATEGORIES` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`);
+  ADD CONSTRAINT `FK_bookscategories` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
