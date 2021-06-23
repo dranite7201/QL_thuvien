@@ -9,26 +9,27 @@
 
 <body>
     <main>
-        <h1 class="section-heading">ALL BOOKS</h1>
+        <h1 class="section-heading">ALL BOOKS     
+             <div id="right-footer">
+            <button style="font-size:large;background-color:white;font-family:Time new roman;" ><a href="ThemSach.php">THÊM SÁCH </a></button> 
+             </div>
+        </h1> 
 
         <?php
         include_once('DataProvider.php');
         $sqlLoai = "SELECT * FROM categories";
         $dsLoai = DataProvider::ExecuteQuery($sqlLoai);
         ?>
-        Loại:
+        <h3>Loại:</h3>
         <select name="cboLoai" id="cboLoai">
             <?php
             while ($loai1 = mysqli_fetch_array($dsLoai)) {
                 $selected = $_REQUEST["category"] == $loai['category'] ? "selected" : "";
                 echo "<option value='{$loai1['']}' {$selected}>{$loai1['category']}</option>";
             }
-            ?>
-        </select><br>
-        <div id="right-footer">
-            <a href="ThemSach.php">THÊM SÁCH</a>
-        </div>
-        <section>
+            ?></select>
+  
+      <section>
             <div>
                 <?php
                 $sqlSach = "SELECT id, title, isbn, pageCount, shortDescription, status, category, author_name, thumbnailUrl from books join categories lo on lo.book_id = books.id join authors tg on tg.book_id = books.id";
@@ -42,16 +43,16 @@
 
                 $result = DataProvider::ExecuteQuery($sqlSach);
                 while ($sach = mysqli_fetch_array($result)) {
-                    $tacgia = $sach['author_name'];
-                    $tinhtrang = $sach['status'];
+                    $title = $sach['author_name'];
+                    $status = $sach['status'];
                     $gt = $sach['shortDescription'];
                     $dsSach = <<< EOD
                     <div class="hh-box">
                         <img src="{$sach['thumbnailUrl']}" class="hh-box-image">
                         <div class="hh-box-name">Tên sách: {$sach["title"]}</div>
-                        <div class="hh-box-gia">Tác giả: {$tacgia}</div>
+                        <div class="hh-box-gia">Tác giả: {$title}</div>
                         <div class="hh-box-gt">Giới thiệu: {$gt}</div>
-                        <div class="hh-box-tinhtrang">Tình Trạng: {$tinhtrang}</div>
+                        <div class="hh-box-tinhtrang">Tình Trạng: {$status}</div>
                     </div>
                 EOD;
                     echo $dsSach;
