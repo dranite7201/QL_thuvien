@@ -7,7 +7,15 @@ a{
     text-decoration: none;
     color: black;
 }
-
+h2{
+ padding: 8px;
+ background: rgba(255, 0, 0, 0.8);
+ border-radius: 8px;
+ margin: 0%;
+ font-size: 30px;
+ font-family: "Roboto Slab",
+ serif;
+ }
 p {
   line-height: 1.5;
 }
@@ -77,4 +85,33 @@ footer #right-footer {
   flex: 2;
   padding: 8px;
   text-align: center;
+}
+
+
+.form {
+  width: 800px;
+  border: 3px solid rgb(238, 9, 58);
+  padding: 20px;
+  margin: 0 auto;
+  font-weight: 700px;
+  background-color:rgb(12, 11, 11);
+  color: rgb(245, 245, 248);
+  font-size: larger;
+  font-family:'Times New Roman';
+  
+}
+
+.form input {
+  width: 100%;
+  padding: 10px 0;
+}
+input, textarea,select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #d8d5db;
+  color: rgb(20, 18, 18);
+  font-size: large
 }
