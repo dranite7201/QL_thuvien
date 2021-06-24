@@ -4,8 +4,7 @@ $pdo = new PDO('mysql:host=localhost; dbname=qltv', 'root','');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-//$id = $_POST['id'] ?? NULL;
-$id = "60a8a5f6585c6a78469fad16";
+$id = $_POST['id'] ?? NULL;
 if(!$id){
     header('Location: dsSach.php');
     exit();
