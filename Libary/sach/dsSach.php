@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="style-sach.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
@@ -15,73 +15,70 @@
                 <button style="font-size:large;background-color:white;font-family:Time new roman;"><a href="ThemSach.php">THÊM SÁCH </a></button>
             </div>
             <div id="right-footer">
-                <button style="font-size:large;background-color:white;font-family:Time new roman;"><a href="">XÓA SÁCH </a></button>
+                <button style="font-size:large;background-color:white;font-family:Time new roman;"><a href="SuaInfoSach.php">SỬA THÔNG TIN SÁCH </a></button>
             </div>
-            <div id="right-footer">
-                <button style="font-size:large;background-color:white;font-family:Time new roman;"><a href="SuaInfoSach.php?id=<?php echo $id; ?>">SỬA THÔNG TIN</a></button>
-            </div>
+
         </h1>
-
-        <?php
-        include_once('DataProvider.php');
-
-        $sqlLoai = "SELECT * FROM categories";
-        $dsLoai = DataProvider::ExecuteQuery($sqlLoai);
-        ?>
-        <h3>Loại:</h3>
-        <select name="cboCategories" id="cboCategories">
-            <?php
-            while ($loai1 = mysqli_fetch_array($dsLoai)) {
-                $selected = $_REQUEST["book_id"] == $loai1['book_id'] ? "selected" : "";
-                echo "<option value='{$loai1['book_id']}' {$selected}>{$loai1['category']}</option>";
-            }
-            ?>
-        </select><br>
         <div>
             <?php
-            $sqlSach = "SELECT id, title, category, thumbnailUrl, author_name from books join categories lo on lo.book_id = books.id join authors tg on tg.book_id = books.id GROUP BY books.id";
-            if (isset($_REQUEST["book_id"])) {
-                $sqlSach .= " WHERE books.id = " . $_REQUEST["book_id"];
-            }
+            include_once('DataProvider.php');
+            $sqlLoai = "SELECT * FROM categories";
+            $dsLoai = DataProvider::ExecuteQuery($sqlLoai);
+            ?>
+            Loại:
+            <select name="cbo" id="cbo">
+                <?php
+                while ($loai = mysqli_fetch_array($dsLoai)) {
+                    $selected = $_REQUEST["book_id"] == $loai['book_id'] ? "selected" : "";
+                    echo "<option value='{$loai['book_id']}' {$selected}>{$loai['category']}</option>";
+                }
+                ?>
+            </select></br>
 
-            /*if ( == 1) {
-                echo "Sách Đã Được Mượn";
-            } else echo "Còn Sách";*/
 
-            $result = DataProvider::ExecuteQuery($sqlSach);
-            while ($sach = mysqli_fetch_array($result)) {
-                $dsSach = <<< EOD
+            <div>
+                <?php
+                $sqlSach = "SELECT id,category, author_name ,title, pageCount, shortDescription, status, thumbnailUrl  from books join categories lo  on lo.book_id = books.id join authors tg on books.id=tg.book_id group by title;";
+                if (isset($_REQUEST["book_id"])) {
+                    $sqlSach .= " WHERE categories.book_id = " . $_REQUEST["book_id"];
+                }
+                $result = DataProvider::ExecuteQuery($sqlSach);
+                while ($sach = mysqli_fetch_array($result)) {
+                    $category = $sach['category'];
+                    $author_name = $sach['author_name'];
+                    $status = $sach['status'];
+                    $shortDescription = $sach['shortDescription'];
+                    $dsSach = <<< EOD
                     <div class="hh-box">
-                    <div class="hh-box-promotion"></div>
-                    <div class="hh-box-qua"></div>
-                    <div class="hh-box-image">
+                        <div style="width: 200px; height: 180px;">
                         <img src="{$sach['thumbnailUrl']}">
-                    </div><br>
+                        </div>
                         <div class="hh-box-name">
-                            <a href = "book.php">
-                            Tên sách: {$sach["title"]}</a>
+                        <a href = "book.php">
+                        Tên sách: {$sach["title"]}</a>
                         </div>
-                        <div class="hh-box-gia">
-                        Tác giả: {$sach['author_name']}
-                        </div>
-                        <div class="hh-box-sua">
-                            <a href ="SuaInfoSach.php?id=<?php echo {$sach['id']}; ?>">Sửa</a>
-                        </div>
+                        <div class="hh-box-gia">Tác giả: {$author_name}</div>
+                        <div class="hh-box-loai">Loại: {$category}</div>
+                        <div class="hh-box-gt">Giới thiệu: {$shortDescription}</div>
+                        <div class="hh-box-tinhtrang">Tình Trạng: {$status}</div>
+                        <div>
                         <form method="post" action="xoasach.php" style="display: inline-block">
                             <input  type="hidden" name="id" value="<?php echo {$sach['id']} ?>"/>
                             <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                         </form>
+                        <div>
                     </div>
                 EOD;
-                echo $dsSach;
-            }
-            ?>
+                    echo $dsSach;
+                }
+                ?>
+            </div>
         </div>
 
         <script>
             $(function() {
 
-                $("#cboLoai").change(function() {
+                $("#cbo").change(function() {
                     window.location.href = 'dsSach.php?book_id=' + $(this).val();
                 });
             });
@@ -90,6 +87,3 @@
 </body>
 
 </html>
-<!--<img src="sach/{$sach['thumbnailUrl']}" class="hh-box-image">
-<img src="images/moi-icon.png" class="hh-box-new" >->
-// <a href = "book.php">
