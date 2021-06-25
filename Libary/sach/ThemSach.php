@@ -1,31 +1,89 @@
+
+
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
 </head>
+
 <body>
+    <div class="container">
+        <div class="header">
+        <div id="slideout-menu">
+            <ul>
+                <li>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="about.php">About</a>
+                </li>
+                <li>
+                    <a href="user.php">
+                        <i class="fas fa-user" ></i>
+                    </a>
+                </li>
+                <li>
+                    <input type="text" placeholder="Search">
+                </li>
+            </ul>
+        </div>
 
-    <form method="post" action="ThemSach.php" class="form">
+    <nav>
+        <div id="logo-img">
+            <a href="index.php">
+                <img src="img/logo.png" alt="">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="index.php">Home</a>
+            </li>
+            <li>
+                <a href="about.php">About</a>
+            </li>
+            <li>
+                <div id="user-icon">
+                    <a href="user.php">
+                        <i class="fas fa-user" ></i>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div id="search-icon">
+                   <i class="fas fa-search"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
 
-        <h2 style="text-align: center;">Điền vào nội dung sau để thêm sách</h2>
-        Tên Sách: <input type="text" name="title" value="" required/>
-        Mã số sách:<input type="text" name="isbn" value="" required/>
-        Số trang:<input type="text" name="pageCount" value="" required/>
-        Ngày đăng:<input type="date" name="publishedDate" value="" required/> 
-        Nguồn:<input type="link" name="thumbnailUrl" value="" required/>
-        Mô tả:<input type="text" name="shortDescription" value="" required/>
-        Nội dung chi tiết:<br>
-            <textarea  name="longDescription" rows="5" cols="40%"></textarea><br>
-        Tình trạng: <select name="status" >
-           <option  value="PUBLISH" >PUBLISH</option>
-           <option value="PRIVATE">PRIVATE</option>
-        </select> </br> 
-        Tác Giả: <input type="text" name="author_name" value="" required> <br> 
-        <input type="submit" name="themsach" value="Thêm Sách" style=" background-color:red ;width: 20%;font-size:40;color:white;border-radius: 8px;" />
-        <?php require 'xulyAddSach.php';?>
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+</div>
+    <form method="post" action="xulyAddSach.php" class="form">
+
+        <h2>Thêm Sách</h2>
+        Tên Sách: <input type="text" name="tensach" value ="hihi" required> <br>
+        Tác Giả: <input type="text" name="tacgia" required> <br>
+        Loại Sách: <input type="number_format" name="maloai" required> <br><br>
+        Mô Tả Ngắn: <input type="text" name="shortdes">
+        Mô Tả Dài: <input type="text" name="longdes">
+        Số trang: <input type="text" name="page">
+        URL Hình ảnh: <input type="text" name="url">
+        <input type="submit" name="themsach" value="Thêm Sách" style="color: red; background-color: aquamarine;" />
     </form>
-
+    </div>
 </body>
 
 </html>
+<script src="main.js"></script>
