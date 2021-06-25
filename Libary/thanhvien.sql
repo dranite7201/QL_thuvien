@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2021 at 06:00 PM
+-- Generation Time: Jun 25, 2021 at 06:12 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -58,7 +58,7 @@ INSERT INTO `thanhvien` (`username`, `password`, `hoten`, `ngsinh`, `email`, `ph
 -- Indexes for table `thanhvien`
 --
 ALTER TABLE `thanhvien`
-  ADD PRIMARY KEY (`username`,`password`);
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
