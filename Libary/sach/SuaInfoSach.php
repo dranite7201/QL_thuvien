@@ -10,7 +10,7 @@
 <body>
     <?php
     header('Content-Type: text/html; charset=utf-8');
-    $conn = mysqli_connect('localhost', 'root', '', 'data') or die('Lỗi kết nối');
+    $conn = mysqli_connect('localhost', 'root', '', 'data1') or die('Lỗi kết nối');
     mysqli_set_charset($conn, "utf8");
     #//$sql = "SELECT * from books";
     // Dùng isset để kiểm tra Form
@@ -18,33 +18,37 @@
         //lấy dữ liệu trên form vào biến
         $id = $_POST['id'];
         $title = $_POST['title'];
-        $isbn = $_POST['isbn'];
-        $pageCount = $_POST['pageCount'];
-        $publishedDate = $_POST['publishedDate'];
+        $pagec = $_POST['pagec'];
         $thumbnailUrl = $_POST['thumbnailUrl'];
         $shortDescription = $_POST['shortDescription'];
         $longDescription = $_POST['longDescription'];
         $status = $_POST['status'];
-        $category_id = $_POST['category_id'];
-        $author_id = $_POST['author_id'];
+        $category_name = $_POST['category'];
+        $author_name = $_POST['author_name'];
         if (empty($id)) {
             echo "Không được bỏ trống";
         };
-        $sql = "SELECT * from books where id = '$id'";
+        $sql = "SELECT id, title, pagec, thumbnailUrl, shortDescription, longDescription, status, author_name, category from books join authors tg on tg.book_id = books.id join categories lo on lo.book_id = books.id where id = '$id'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
-            $link = "UPDATE books SET title = ' $title  ', isbn = '  $isbn  ', pageCount = '  $pageCount ', publishedDate = ' $publishedDate  ', thumbnailUrl = ' $thumbnailUrl  ', shortDescription = ' $shortDescription  ', longDescription = '  $longDescription ', status = ' $status ' WHERE id = '$id '";
+            $link = "UPDATE books SET title = ' $title  ', pagec = '  $pagec ', thumbnailUrl = ' $thumbnailUrl  ', shortDescription = ' $shortDescription  ', longDescription = '  $longDescription ', status = ' $status ' WHERE id = '$id '";
+            $link1 = "UPDATE categories SET category= '$category_name' WHERE book_id = '$id'";
+            $link2 = "UPDATE authors SET author_name = '$author_name' WHERE book_id = '$id;";
             echo '<script language="javascript">alert("Sửa thông tin sách thành công!"); window.location="SuaInfoSach.php";</script>';
             if (mysqli_query($conn, $link)) {
                 echo "ID Sách: " . $_POST['id'] . "<br/>";
                 echo "Tên Sách: " . $_POST['title'] . "<br/>";
-                echo "Mã số sách: " . $_POST['isbn'] . "<br/>";
-                echo "Số trang: " . $_POST['pageCount'] . "<br/>";
+                echo "Số trang: " . $_POST['pagec'] . "<br/>";
                 echo "Nguồn: " . $_POST['thumbnaillUrl'] . "<br/>";
-                echo "Ngày đăng: " . $_POST['publishedDate'] . "<br/>";
                 echo "Mô tả " . $_POST['shortDescription'] . "<br/>";
                 echo "Nội dung: " . $_POST['longDescription'] . "<br/>";
                 echo "Tình Trạng Sách: " . $_POST['status'] . "<br/>";
+                if (mysqli_query($conn, $link1)) {
+                    echo "Loại: " . $_POST['category'] . "<br/>";
+                    if (mysqli_query($conn, $link2)) {
+                        echo "Tác giả: " . $_POST['author_name'] . "<br/>";
+                    }
+                }
             } else {
                 echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý"); window.location="SuaInfoSach.php";</script>';
             }
@@ -55,16 +59,16 @@
         <h2 style="text-align: center;">Sửa Thông Tin Sách</h2>
         ID Sách: <input type="text" name="id" value="" required /><br />
         Tên Sách: <input type="text" name="title" value="" required /><br />
-        Mã số sách:<input type="text" name="isbn" value="" required /><br />
-        Số trang:<input type="text" name="pageCount" value="" required /><br />
-        Ngày đăng:<input type="date" name="publishedDate" value="" required /><br />
+        Tác Giả:<input type="text" name="author_name" value="" required /><br />
+        Số trang:<input type="text" name="pagec" value="" required /><br />
+        Loại:<input type="text" name="category" value="" required /><br />
         Nguồn:<input type="link" name="thumbnailUrl" value="" /><br />
         Mô tả:<input type="text" name="shortDescription" value="" required /><br />
         Nội dung chi tiết:<br>
         <textarea name="longDescription" rows="5" cols="40%"></textarea><br>
         Tình trạng: <select name="status">
-            <option value="PUBLISH">Còn Sách</option>
-            <option value="PRIVATE">Hết Sách</option>
+            <option value="Available">Available</option>
+            <option value="Not Available">Not Available</option>
         </select> </br><br>
         <button type="submit" name="suasach" value="" style=" background-color:red ;width: 50%;font-size:40;color:white;border-radius: 8px;"> Sửa Thông Tin Sách </button>
 
