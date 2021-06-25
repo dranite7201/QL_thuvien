@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th6 24, 2021 lúc 10:33 AM
+-- Thời gian đã tạo: Th6 25, 2021 lúc 06:39 AM
 -- Phiên bản máy phục vụ: 10.4.19-MariaDB
 -- Phiên bản PHP: 8.0.6
 
@@ -59,7 +59,7 @@ CREATE TABLE `books` (
   `thumbnailUrl` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `shortDescription` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `longDescription` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `status` enum('Còn sách',' Hết sách') COLLATE utf8_unicode_ci NOT NULL
+  `status` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `category_id`, `author_id`, `title`, `isbn`, `pageCount`, `publishedDate`, `thumbnailUrl`, `shortDescription`, `longDescription`, `status`) VALUES
-(1, 1, 1, 'tôi thấy hoa vàng trên cỏ xanh', '123', 32, '2021-06-02', 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg', 'hay', 'hay lắm', 'Còn sách');
+(1, 1, 1, 'tôi thấy hoa vàng trên cỏ xanh', '123', 32, '2021-06-02', 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg', 'hay', 'hay lắm', 1);
 
 -- --------------------------------------------------------
 
@@ -105,14 +105,36 @@ ALTER TABLE `authors`
 --
 ALTER TABLE `books`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_loai` (`category_id`),
-  ADD KEY `fk_tacgia` (`author_id`);
+  ADD KEY `author_id` (`author_id`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `authors`
+--
+ALTER TABLE `authors`
+  MODIFY `author_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `books`
+--
+ALTER TABLE `books`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT cho bảng `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `category_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -122,8 +144,8 @@ ALTER TABLE `categories`
 -- Các ràng buộc cho bảng `books`
 --
 ALTER TABLE `books`
-  ADD CONSTRAINT `fk_loai` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`),
-  ADD CONSTRAINT `fk_tacgia` FOREIGN KEY (`author_id`) REFERENCES `authors` (`author_id`);
+  ADD CONSTRAINT `books_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `authors` (`author_id`),
+  ADD CONSTRAINT `books_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
