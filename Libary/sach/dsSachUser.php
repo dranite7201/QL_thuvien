@@ -19,15 +19,82 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Sach</title>
 </head>
 
 <body>
-    <h1 style="text-align: center; background-color:crimson; color:white">LIST BOOKS</h1>
+    <div id="slideout-menu">
+        <ul>
+            <li>
+                <a href="../index.php">Home</a>
+            </li>
+            <li>
+                <a href="../about.php">About</a>
+            </li>
+            <li>
+                <a href="../user.php">
+                    <i class="fas fa-user"></i>
+                </a>
+            </li>
+            <li>
+                <input type="text" placeholder="Search">
+            </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div id="logo-img">
+            <a href="index.php">
+                <img src="../img/logo.png" alt="">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+            <li>
+                <a class="active" href="../index.php">Home</a>
+            </li>
+            <li>
+                <a href="../about.php">About</a>
+            </li>
+            <li>
+                <div id="user-icon">
+                    <a href="../user.php">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <a style="float:right; color:white" href="../dangnhap/dangxuat.php">Đăng Xuất</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <form action="./search.php" method="POST">
+            <input type="text" placeholder="Search Here" name="book_name">
+        </form>
+    </div>
+    <div>
+        <h1 style="text-align: center; background-color: crimson; color:white">
+            LIST BOOKS
+        </h1>
+    </div>
 
     <main>
         <table class="table">
@@ -57,13 +124,59 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
                         <td style="border-color:firebrick"><?php echo $book["shortDescription"] ?></td>
                         <td style="border-color:firebrick">
                             <a href="#">Mượn Sách</a>
+                            <form method="post" action="./book.php" style="display: inline-block">
+                                <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Chi tiết sách</button>
+                            </form>
                         </td>
                     </tr>
                 <?php } ?>
             </tbody>
-        </table>
+        </table><br>
+        <footer>
+            <div id="left-footer">
+                <h3>Quick Links</h3>
+                <p>
+                <ul>
+                    <li>
+                        <a href="index.php">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.php">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <div id="right-footer">
+                <h3>Follow us on</h3>
+                <div id="social-media-footer">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>This website is developed by do NOT drop</p>
+            </div>
+        </footer>
+
     </main>
 
-</body>
+    <script src="main.js"></script>
+</body>>
 
 </html>

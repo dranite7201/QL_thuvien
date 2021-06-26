@@ -1,18 +1,4 @@
-<?php
-
-$pdo = new PDO('mysql:host=localhost;port=3306;dbname=data1', 'root', '');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$statement = $pdo->prepare("SELECT id, title, category, thumbnailUrl, author_name,shortDescription from books join categories lo on lo.book_id = books.id join authors tg on tg.book_id = books.id GROUP BY books.id");
-$statement->execute();
-$books = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-$statement1 = $pdo->prepare("select category from categories GROUP BY category  ");
-$statement1->execute();
-$categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
-?>
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,7 +12,6 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
-    <title>Sach</title>
 </head>
 
 <body>
@@ -78,54 +63,47 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </li>
         </ul>
-    </nav>
-
-    <div id="searchbox">
-        <form action="./search.php" method="POST">
-            <input type="text" placeholder="Search Here" name="book_name">
-        </form>
-    </div>
+    </nav> <br><br><br><br>
     <div>
-        <h1 style="text-align: center; background-color: crimson; color:white">
-            LIST BOOKS
-        </h1>
-    </div>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th style="border-color:firebrick" scope="col">#</th>
-                <th style="border-color:firebrick" scope="col">Hình ảnh</th>
-                <th style="border-color:firebrick" scope="col">Tên Sách</th>
-                <th style="border-color:firebrick" scope="col">Tác Giả</th>
-                <th style="border-color:firebrick" scope="col">Thế loại</th>
-                <th style="border-color:firebrick" scope="col">Mô tả </th>
-                <th style="border-color:firebrick" scope="col">Actions</th>
-            </tr>
-        </thead>
+        <?php
+        try {
+            $pdo = new PDO('mysql:host=localhost;port=3306;dbname=data1', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $id = $_POST['id'] ?? NULL;
+
+            if (!$id) {
+                header('Location: dsSach.php');
+                exit();
+            }
+
+            $statement = $pdo->prepare("SELECT *, author_name, category from books join categories lo on lo.book_id = books.id join authors tg on tg.book_id = books.id where id =:id");
+            $statement->bindValue(':id', $id);
+            $statement->execute();
+            $book = $statement->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        } ?>
+
         <tbody>
-            <?php foreach ($books as $i => $book) { ?>
-                <tr>
-                    <th style="border-color:firebrick" scope="row"><?php echo $i + 1 ?></th>
-                    <td style="border-color:firebrick">
-                        <?php if ($book['thumbnailUrl']) : ?>
-                            <img src="<?php echo $book['thumbnailUrl'] ?>" alt="<?php echo $book['title'] ?>" class="product-img">
+            <h3 style="text-align: center;">CHI TIẾT SÁCH</h3>
+            <?php foreach ($book as $i => $sach) { ?>
+                <div style="text-align: center;">
+                    <div>
+                        <?php if ($sach['thumbnailUrl']) : ?>
+                            <img src="<?php echo $sach['thumbnailUrl'] ?>" alt="<?php echo $sach['title'] ?>" class="product-img">
                         <?php endif; ?>
-                    </td>
-                    <td style="border-color:firebrick"><?php echo $book['title'] ?></td>
-                    <td style="border-color:firebrick"><?php echo $book['author_name'] ?></td>
-                    <td style="border-color:firebrick"><?php echo $book['category'] ?></td>
-                    <td style="border-color:firebrick"><?php echo $book["shortDescription"] ?></td>
-                    <td style="border-color:firebrick">
-                        <form method="post" action="./book.php" style="display: inline-block">
-                            <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Chi tiết sách</button>
-                        </form>
-                    </td>
-                </tr>
+                    </div>
+                    <div><?php echo $sach['title'] ?></div>
+                    <div><?php echo $sach['author_name'] ?></div>
+                    <div><?php echo $sach['category'] ?></div>
+                    <div><?php echo $sach['status'] ?></div>
+                    <div><?php echo $sach["shortDescription"] ?></div>
+                    <div><?php echo $sach['longDescription'] ?></div>
+                </div>
             <?php } ?>
         </tbody>
-    </table><br>
+    </div>
     <footer>
         <div id="left-footer">
             <h3>Quick Links</h3>
@@ -166,8 +144,6 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
             <p>This website is developed by do NOT drop</p>
         </div>
     </footer>
-
-    </main>
 
     <script src="main.js"></script>
 </body>
