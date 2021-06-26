@@ -132,7 +132,14 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
                                 <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
-                        </td>
+                            <?php 
+            if($book['status']=="Unavailable") {?>
+                <form method="post" action="trasach.php" style="display: inline-block">
+                    <input  type="hidden" name="id" value="<?php echo $book['id'] ?>"/>
+                    <button type="submit" class="btn btn-sm btn-outline-primary" ?>Trả sách</button>
+                </form>
+            </td>
+            <?php } ?>
                     </tr>
                 <?php } ?>
             </tbody>
