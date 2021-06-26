@@ -29,7 +29,7 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <div>
         <a style="float:right; color:black" href="../dangnhap/dangxuat.php">Đăng Xuất</a>
-        <h1 style="text-align: center; background-color: aquamarine; color:brown">
+        <h1 style="text-align: center; background-color: crimson; color:white">
             LIST BOOKS
         </h1>
     </div>
@@ -38,29 +38,29 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Hình ảnh</th>
-                <th scope="col">Tên Sách</th>
-                <th scope="col">Tác Giả</th>
-                <th scope="col">Thế loại</th>
-                <th scope="col">Mô tả </th>
-                <th scope="col">Actions</th>
+                <th style="border-color:firebrick" scope=" col">#</th>
+                <th style="border-color:firebrick" scope="col">Hình ảnh</th>
+                <th style="border-color:firebrick" scope="col">Tên Sách</th>
+                <th style="border-color:firebrick" scope="col">Tác Giả</th>
+                <th style="border-color:firebrick" scope="col">Thế loại</th>
+                <th style="border-color:firebrick" scope="col">Mô tả </th>
+                <th style="border-color:firebrick" scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($books as $i => $book) { ?>
                 <tr>
-                    <th scope="row"><?php echo $i + 1 ?></th>
-                    <td>
+                    <th style="border-color:firebrick" scope="row"><?php echo $i + 1 ?></th>
+                    <td style="border-color:firebrick">
                         <?php if ($book['thumbnailUrl']) : ?>
                             <img src="<?php echo $book['thumbnailUrl'] ?>" alt="<?php echo $book['title'] ?>" class="product-img">
                         <?php endif; ?>
                     </td>
-                    <td><?php echo $book['title'] ?></td>
-                    <td><?php echo $book['author_name'] ?></td>
-                    <td><?php echo $book['category'] ?></td>
-                    <td><?php echo $book["shortDescription"] ?></td>
-                    <td>
+                    <td style="border-color:firebrick"><?php echo $book['title'] ?></td>
+                    <td style="border-color:firebrick"><?php echo $book['author_name'] ?></td>
+                    <td style="border-color:firebrick"><?php echo $book['category'] ?></td>
+                    <td style="border-color:firebrick"><?php echo $book["shortDescription"] ?></td>
+                    <td style="border-color:firebrick">
                         <form method="post" action="SuaInfoSach.php" style="display: inline-block">
                             <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
                             <button type="submit" class="btn btn-sm btn-outline-primary">Edit</button>
