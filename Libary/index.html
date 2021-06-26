@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,8 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Wohoo Libary</title>
 </head>
 
@@ -16,13 +18,13 @@
     <div id="slideout-menu">
         <ul>
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.php">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="about.php">About</a>
             </li>
             <li>
-                <a href="user.html">
+                <a href="user.php">
                     <i class="fas fa-user" ></i>
                 </a>
             </li>
@@ -34,7 +36,7 @@
 
     <nav>
         <div id="logo-img">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="img/logo.png" alt="">
             </a>
         </div>
@@ -43,14 +45,14 @@
         </div>
         <ul>
             <li>
-                <a class="active" href="index.html">Home</a>
+                <a class="active" href="index.php">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="about.php">About</a>
             </li>
             <li>
                 <div id="user-icon">
-                    <a href="user.html">
+                    <a href="user.php">
                         <i class="fas fa-user" ></i>
                     </a>
                 </div>
@@ -64,7 +66,9 @@
     </nav>
 
     <div id="searchbox">
-        <input type="text" placeholder="Search Here">
+        <form action="./themsach/search.php" method="POST">
+        <input type="text" placeholder="Search Here" name="book_name">
+        </form>
     </div>
 
     <div id="banner">
@@ -167,10 +171,10 @@
                 <p>
                     <ul>
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="about.php">About</a>
                         </li>
                         <li>
                             <a href="#">Privacy Policy</a>
@@ -207,4 +211,4 @@
     <script src="main.js"></script>
 </body>
 
-</html>
+</php>
