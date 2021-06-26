@@ -123,8 +123,14 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
                         <td style="border-color:firebrick"><?php echo $book['category'] ?></td>
                         <td style="border-color:firebrick"><?php echo $book["shortDescription"] ?></td>
                         <td style="border-color:firebrick">
-                            <a href="#">Mượn Sách</a>
+                            <?php 
+            if($book['status']=="Available") {?>
+                <form method="post" action="muonsach.php" style="display: inline-block">
+                    <input  type="hidden" name="id" value="<?php echo $book['id'] ?>"/>
+                    <button type="submit" class="btn btn-sm btn-outline-primary" ?>Mượn sách</button>
+                </form>
                         </td>
+                        <?php } ?>
                     </tr>
                 <?php } ?>
             </tbody>
