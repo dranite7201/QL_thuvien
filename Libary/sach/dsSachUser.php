@@ -1,5 +1,5 @@
 <?php
-
+// ĐỂ Ở TRANG USER CHO USER DÙNG
 $pdo = new PDO('mysql:host=localhost;port=3306;dbname=data1', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
