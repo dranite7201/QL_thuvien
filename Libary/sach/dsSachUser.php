@@ -1,5 +1,5 @@
 <?php
-// ĐỂ Ở TRANG USER CHO USER DÙNG
+
 $pdo = new PDO('mysql:host=localhost;port=3306;dbname=data1', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -27,7 +27,7 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <h1 style="text-align: center; background-color:aquamarine; color:brown">LIST BOOKS</h1>
+    <h1 style="text-align: center; background-color:crimson; color:white">LIST BOOKS</h1>
 
     <main>
         <table class="table">
