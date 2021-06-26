@@ -27,44 +27,42 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-    <h1>Danh Sách Sách</h1>
+    <h1 style="text-align: center; background-color:aquamarine; color:brown">LIST BOOKS</h1>
 
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Hình ảnh</th>
-                <th scope="col">Tên Sách</th>
-                <th scope="col">Tác Giả</th>
-                <th scope="col">Thế loại</th>
-                <th scope="col">Mô tả </th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($books as $i => $book) { ?>
+    <main>
+        <table class="table">
+            <thead>
                 <tr>
-                    <th scope="row"><?php echo $i + 1 ?></th>
-                    <td>
-                        <?php if ($book['thumbnailUrl']) : ?>
-                            <img src="<?php echo $book['thumbnailUrl'] ?>" alt="<?php echo $book['title'] ?>" class="product-img">
-                        <?php endif; ?>
-                    </td>
-                    <td><?php echo $book['title'] ?></td>
-                    <td><?php echo $book['author_name'] ?></td>
-                    <td><?php echo $book['category'] ?></td>
-                    <td><?php echo $book["shortDescription"] ?></td>
-                    <td>
-                        <form method="post" action="../giohang/phieuMuon.php" style="display: inline-block">
-                            <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
-                            <button type="submit" class="btn btn-sm btn-outline-primary">Mượn Sách</button>
-                        </form>
-                    </td>
+                    <th style="border-color:firebrick" scope="col">#</th>
+                    <th style="border-color:firebrick" scope="col">Hình ảnh</th>
+                    <th style="border-color:firebrick" scope="col">Tên Sách</th>
+                    <th style="border-color:firebrick" scope="col">Tác Giả</th>
+                    <th style="border-color:firebrick" scope="col">Thế loại</th>
+                    <th style="border-color:firebrick" scope="col">Mô tả </th>
+                    <th style="border-color:firebrick" scope="col">Actions</th>
                 </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($books as $i => $book) { ?>
+                    <tr>
+                        <th style="border-color:firebrick" scope="row"><?php echo $i + 1 ?></th>
+                        <td style="border-color:firebrick">
+                            <?php if ($book['thumbnailUrl']) : ?>
+                                <img src="<?php echo $book['thumbnailUrl'] ?>" alt="<?php echo $book['title'] ?>" class="product-img">
+                            <?php endif; ?>
+                        </td>
+                        <td style="border-color:firebrick; font-size: large; color:darkslateblue"><?php echo $book['title'] ?></td>
+                        <td style="border-color:firebrick; font-style:italic; color:indianred"><?php echo $book['author_name'] ?></td>
+                        <td style="border-color:firebrick"><?php echo $book['category'] ?></td>
+                        <td style="border-color:firebrick"><?php echo $book["shortDescription"] ?></td>
+                        <td style="border-color:firebrick">
+                            <a href="#">Mượn Sách</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </main>
 
 </body>
 
