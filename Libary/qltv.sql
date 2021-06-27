@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2021 at 11:53 AM
+-- Generation Time: Jun 27, 2021 at 03:14 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -212,11 +212,11 @@ INSERT INTO `books` (`id`, `title`, `pagec`, `thumbnailUrl`, `shortDescription`,
 ('60a8a5fc585c6a78469fad20', 'Hello! Flex 4', 258, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong3.jpg', 'Hello! Flex 4 progresses through 26 self-contained examples selected so you can progressively master Flex. They vary from small one-page apps, to a 3D rotating haiku, to a Connect Four-like game. And in the last chapter you\'ll learn to build a full Flex application called SocialStalkr   a mashup that lets you follow your friends by showing their tweets on a Yahoo map.', NULL, 'Available'),
 ('60a8a5fc585c6a78469fad21', 'Coffeehouse', 316, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/asher.jpg', 'Coffeehouse is an anthology of stories, poems and essays originally published on the World Wide Web.', NULL, 'Available'),
 ('60a8a5fc585c6a78469fad22', 'Team Foundation Server 2008 in Action', 344, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/azher.jpg', '', NULL, 'Available'),
-('60a8a5fd585c6a78469fad23', 'Brownfield Application Development in .NET', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/baley.jpg', 'Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you\'ve learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.', NULL, 'Available'),
-('60a8a5fd585c6a78469fad24', 'MongoDB in Action', 0, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker.jpg', 'MongoDB In Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications.', NULL, 'Available'),
+('60a8a5fd585c6a78469fad23', 'Brownfield Application Development in .NET', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/baley.jpg', 'Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you\'ve learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.', NULL, 'Unavailable'),
+('60a8a5fd585c6a78469fad24', 'MongoDB in Action', 0, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker.jpg', 'MongoDB In Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications.', NULL, 'Unavailable'),
 ('60a8a5fd585c6a78469fad25', 'Distributed Application Development with PowerBuilder 6.0', 504, '', '', NULL, 'Available'),
-('60a8a5fe585c6a78469fad26', 'Jaguar Development with PowerBuilder 7', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta2.jpg', 'Jaguar Development with PowerBuilder 7 is the definitive guide to distributed application development with PowerBuilder. It is the only book dedicated to preparing PowerBuilder developers for Jaguar applications and has been approved by Sybase engineers and product specialists who build the tools described in the book.', NULL, 'Available'),
-('60a8a5fe585c6a78469fad27', 'Taming Jaguar', 362, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta3.jpg', '', NULL, 'Available'),
+('60a8a5fe585c6a78469fad26', 'Jaguar Development with PowerBuilder 7', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta2.jpg', 'Jaguar Development with PowerBuilder 7 is the definitive guide to distributed application development with PowerBuilder. It is the only book dedicated to preparing PowerBuilder developers for Jaguar applications and has been approved by Sybase engineers and product specialists who build the tools described in the book.', NULL, 'Unavailable'),
+('60a8a5fe585c6a78469fad27', 'Taming Jaguar', 362, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta3.jpg', '', NULL, 'Unavailable'),
 ('60a8a5fe585c6a78469fad28', '3D User Interfaces with Java 3D', 520, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barrilleaux.jpg', '', NULL, 'Available'),
 ('60a8a5fe585c6a78469fad29', 'Hibernate in Action', 400, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer.jpg', '\"2005 Best Java Book!\" -- Java Developer\'s Journal', NULL, 'Available'),
 ('60a8a5ff585c6a78469fad2a', 'Hibernate in Action (Chinese Edition)', 400, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer-cn.jpg', '', NULL, 'Available'),
@@ -294,12 +294,11 @@ INSERT INTO `books` (`id`, `title`, `pagec`, `thumbnailUrl`, `shortDescription`,
 ('60a8a614585c6a78469fad72', 'The Awesome Power of PowerJ', 378, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hatton2.jpg', 'The Awesome Power of PowerJ shows you how you can write Java programs the very first day with PowerJ, even if you don\'t know Java. Through a hands-on approach that makes liberal use of figures and code snippets, you will learn how to use PowerJ to build effective Java applets and applications.', NULL, 'Available'),
 ('60a8a615585c6a78469fad73', 'The Awesome Power of Power++', 416, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hatton3.jpg', 'The Awesome Power of Power++ is for the beginning to intermediate Power++ programmer. It assumes that you have little or no knowledge of the C++ language but that you do know programming constructs. The purpose is to teach you how to use Power++ to build C++ applets and applications even if you are not a C++ expert. To this end it takes a hands-on approach and makes liberal use of figures and code snippets.', NULL, 'Available'),
 ('60a8a615585c6a78469fad74', 'Azure in Action', 425, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hay.jpg', 'Azure in Action is a fast-paced tutorial intended for architects and developers looking to develop on Windows Azure and the Windows Azure Platform. It\'s designed both for readers new to cloud concepts and for those familiar with cloud development but new to Azure. After a quick walk through the basics, it guides you all the way from your first app through more advanced concepts of the Windows Azure Platform.', NULL, 'Available'),
-('60a8a615585c6a78469fad75', 'Distributed Agile in Action', 325, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hazrati.jpg', 'Distributed Agile in Action is the first book to directly address the unique task of going Agile in a distributed team. Rather than rehashing Agile theories, this book supplies the practical examples and step by step advice you need to help your distributed teams adopt and embrace Agile principles. It\'s a distilled and carefully organized learning aid for working in a distributed Agile environment, with in-depth focus on how to approach three critical components of development-People, Process and Technology.', NULL, 'MEAP'),
+('60a8a615585c6a78469fad75', 'Distributed Agile in Action', 325, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hazrati.jpg', 'Distributed Agile in Action is the first book to directly address the unique task of going Agile in a distributed team. Rather than rehashing Agile theories, this book supplies the practical examples and step by step advice you need to help your distributed teams adopt and embrace Agile principles. It\'s a distilled and carefully organized learning aid for working in a distributed Agile environment, with in-depth focus on how to approach three critical components of development-People, Process and Technology.', NULL, 'Available'),
 ('60a8a616585c6a78469fad76', 'Metaprogramming in .NET', 0, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hazzard.jpg', '', NULL, 'Available'),
 ('60a8a616585c6a78469fad77', 'Portlets and Apache Portals', 500, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hepper.jpg', 'Portlets and Apache Portals was not published by Manning, but the manuscript is available for download from our website \"as is.\"', NULL, 'Available'),
 ('60a8a616585c6a78469fad78', 'Code Generation in Action', 350, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/herrington.jpg', 'Code Generation In Action covers building database access, user interface, remote procedure, test cases, and business logic code as well as code for other key system functions.', NULL, 'Available'),
-('60a8a616585c6a78469fad79', 'Illustrated Guide to HTTP', 400, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hethmon.jpg', '', NULL, 'Available'),
-('LhmtFj9I', 'tôi yêu em', 32, 'afw', 'chưa đọc', 'ohm', 'Available');
+('60a8a616585c6a78469fad79', 'Illustrated Guide to HTTP', 400, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/hethmon.jpg', '', NULL, 'Available');
 
 -- --------------------------------------------------------
 
@@ -420,6 +419,64 @@ INSERT INTO `categories` (`book_id`, `category`) VALUES
 ('60a8a616585c6a78469fad78', 'Programming'),
 ('60a8a616585c6a78469fad79', 'Internet');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phieumuon`
+--
+
+CREATE TABLE `phieumuon` (
+  `pm_id` int(255) NOT NULL,
+  `user` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `book_id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ngaymuon` date NOT NULL,
+  `ngaytra` date DEFAULT NULL,
+  `tinhtrang` varchar(11) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `phieumuon`
+--
+
+INSERT INTO `phieumuon` (`pm_id`, `user`, `book_id`, `ngaymuon`, `ngaytra`, `tinhtrang`) VALUES
+(97, 'admin', '60a8a5fb585c6a78469fad1f', '2021-06-26', '2021-06-30', 'Đang mượn'),
+(98, 'anh', '60a8a5fc585c6a78469fad20', '2021-06-26', '2021-06-30', 'Đang mượn'),
+(99, 'anh', '60a8a5fc585c6a78469fad22', '2021-06-26', '2021-06-30', 'Đang mượn'),
+(100, 'anh', '60a8a5fd585c6a78469fad24', '2021-06-26', NULL, 'Đang mượn'),
+(101, 'anh', '60a8a5fe585c6a78469fad26', '2021-06-26', NULL, 'Đang mượn'),
+(102, 'anh', '60a8a5fe585c6a78469fad27', '2021-06-26', NULL, 'Đang mượn'),
+(105, 'anh', '60a8a5fc585c6a78469fad21', '2021-06-26', '2021-06-30', 'Đang mượn'),
+(106, 'anh', '60a8a5fd585c6a78469fad23', '2021-06-26', NULL, 'Đang mượn');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thanhvien`
+--
+
+CREATE TABLE `thanhvien` (
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `hoten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ngsinh` date NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` int(15) NOT NULL,
+  `type` int(15) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `thanhvien`
+--
+
+INSERT INTO `thanhvien` (`username`, `password`, `hoten`, `ngsinh`, `email`, `phone`, `type`) VALUES
+('admin', '123456', 'admin', '2001-01-01', 'admin123456@gmail.com', 969680680, 0),
+('anh', 'anh123', 'Nguyễn Anh', '1999-01-01', 'anh123456@gmail.com', 293428395, 1),
+('dong', 'dong123', 'nguyễn đông', '2001-01-01', 'dong123456@gmail.com', 842674217, 1),
+('hao', 'hao123', 'lê hảo', '2001-09-01', 'hao123456@gmail.com', 985537124, 1),
+('hoa', 'hoa123', 'bùi hoa', '2002-01-01', 'hoa123456@gmail.com', 923568454, 1),
+('huyen', 'huyen123', 'lê huyền', '2001-11-03', 'huyen123456@gmail.com', 983672531, 1),
+('man', 'man123', 'tăng mẫn', '2001-12-03', 'man123456@gmail.com', 329484289, 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -443,6 +500,30 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`book_id`,`category`);
 
 --
+-- Indexes for table `phieumuon`
+--
+ALTER TABLE `phieumuon`
+  ADD PRIMARY KEY (`pm_id`,`user`,`book_id`),
+  ADD KEY `fk_thanhvienphieumuon` (`user`),
+  ADD KEY `fk_booksphieumuon` (`book_id`);
+
+--
+-- Indexes for table `thanhvien`
+--
+ALTER TABLE `thanhvien`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `phieumuon`
+--
+ALTER TABLE `phieumuon`
+  MODIFY `pm_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -457,6 +538,13 @@ ALTER TABLE `authors`
 --
 ALTER TABLE `categories`
   ADD CONSTRAINT `FK_bookscategories` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`);
+
+--
+-- Constraints for table `phieumuon`
+--
+ALTER TABLE `phieumuon`
+  ADD CONSTRAINT `fk_booksphieumuon` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`),
+  ADD CONSTRAINT `fk_thanhvienphieumuon` FOREIGN KEY (`user`) REFERENCES `thanhvien` (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
