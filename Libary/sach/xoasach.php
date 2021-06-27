@@ -7,7 +7,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $id = $_POST['id'] ?? NULL;
 
 if(!$id){
-    header('Location: hienthisach.php');
+    header('Location: dsSachAdmin.php');
     exit();
 }
 
@@ -23,7 +23,7 @@ $statement1->execute();
 $statement2->execute();
 $statement3->execute();
 
-header("Location: hienthisach.php");
+header("Location: dsSachAdmin.php");
 }
 catch(PDOException $e) {
     echo "Error: " . $e->getMessage();

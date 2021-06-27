@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2021 at 03:14 AM
+-- Generation Time: Jun 27, 2021 at 11:35 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -37,34 +37,14 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`book_id`, `author_name`) VALUES
-('60a8a5fb585c6a78469fad1f', 'Peter Armstrong'),
-('60a8a5fc585c6a78469fad20', 'Peter Armstrong'),
-('60a8a5fc585c6a78469fad21', 'Christian Crumlish'),
-('60a8a5fc585c6a78469fad21', 'Levi Asher'),
-('60a8a5fc585c6a78469fad22', 'Jamil Azher'),
-('60a8a5fd585c6a78469fad23', 'Donald Belcham'),
-('60a8a5fd585c6a78469fad23', 'Kyle Baley'),
-('60a8a5fd585c6a78469fad24', 'Kyle Banker'),
-('60a8a5fd585c6a78469fad25', 'Michael J. Barlotta'),
-('60a8a5fe585c6a78469fad26', 'Michael Barlotta'),
 ('60a8a5fe585c6a78469fad27', 'Jason R. Weiss'),
-('60a8a5fe585c6a78469fad27', 'Michael J. Barlotta'),
-('60a8a5fe585c6a78469fad28', 'Jon Barrilleaux'),
 ('60a8a5fe585c6a78469fad29', 'Christian Bauer'),
-('60a8a5fe585c6a78469fad29', 'Gavin King'),
 ('60a8a5ff585c6a78469fad2a', 'Christian Bauer'),
-('60a8a5ff585c6a78469fad2a', 'Gavin King'),
 ('60a8a5ff585c6a78469fad2b', 'Christian Bauer'),
-('60a8a5ff585c6a78469fad2b', 'Gavin King'),
 ('60a8a5ff585c6a78469fad2c', 'Shawn Bayern'),
 ('60a8a600585c6a78469fad2d', 'Brandon Goodin'),
-('60a8a600585c6a78469fad2d', 'Clinton Begin'),
-('60a8a600585c6a78469fad2d', 'Larry Meadors'),
-('60a8a600585c6a78469fad2e', 'Douglas W. Bennett'),
 ('60a8a600585c6a78469fad2f', 'Emmanuel Bernard'),
-('60a8a600585c6a78469fad2f', 'John Griffin'),
 ('60a8a601585c6a78469fad30', 'Bear Bibeault'),
-('60a8a601585c6a78469fad30', 'Yehuda Katz'),
 ('60a8a601585c6a78469fad31', 'Bear Bibeault'),
 ('60a8a601585c6a78469fad31', 'Yehuda Katz'),
 ('60a8a601585c6a78469fad32', 'Kenneth P. Birman'),
@@ -88,12 +68,8 @@ INSERT INTO `authors` (`book_id`, `author_name`) VALUES
 ('60a8a604585c6a78469fad3d', 'John Stockton'),
 ('60a8a605585c6a78469fad3e', 'Naomi R. Ceder'),
 ('60a8a605585c6a78469fad3f', 'Tom Cervenka'),
-('60a8a605585c6a78469fad40', 'Robert Chapman'),
 ('60a8a606585c6a78469fad41', 'editors'),
 ('60a8a606585c6a78469fad41', 'William R. Cockayne and Michael Zyda'),
-('60a8a606585c6a78469fad42', 'Andy Piper'),
-('60a8a606585c6a78469fad42', 'Arnaud Cogoluegnes'),
-('60a8a606585c6a78469fad42', 'Thierry Templier'),
 ('60a8a606585c6a78469fad43', 'Rod Colledge'),
 ('60a8a607585c6a78469fad44', 'Charlie Collins'),
 ('60a8a607585c6a78469fad44', 'Matthias Kaeppler'),
@@ -208,22 +184,19 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `title`, `pagec`, `thumbnailUrl`, `shortDescription`, `longDescription`, `status`) VALUES
-('60a8a5fb585c6a78469fad1f', 'Flexible Rails', 592, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong.jpg', '\"Flexible Rails created a standard to which I hold other technical books. You definitely get your money\'s worth.\"', NULL, 'Available'),
+('60a8a5fb585c6a78469fad1f', 'Flexible Rails', 592, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong.jpg', '\"Flexible Rails created a standard to which I hold other technical books. You definitely get your money\'s worth.\"', '', 'Available'),
 ('60a8a5fc585c6a78469fad20', 'Hello! Flex 4', 258, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/armstrong3.jpg', 'Hello! Flex 4 progresses through 26 self-contained examples selected so you can progressively master Flex. They vary from small one-page apps, to a 3D rotating haiku, to a Connect Four-like game. And in the last chapter you\'ll learn to build a full Flex application called SocialStalkr   a mashup that lets you follow your friends by showing their tweets on a Yahoo map.', NULL, 'Available'),
 ('60a8a5fc585c6a78469fad21', 'Coffeehouse', 316, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/asher.jpg', 'Coffeehouse is an anthology of stories, poems and essays originally published on the World Wide Web.', NULL, 'Available'),
 ('60a8a5fc585c6a78469fad22', 'Team Foundation Server 2008 in Action', 344, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/azher.jpg', '', NULL, 'Available'),
-('60a8a5fd585c6a78469fad23', 'Brownfield Application Development in .NET', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/baley.jpg', 'Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you\'ve learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.', NULL, 'Unavailable'),
-('60a8a5fd585c6a78469fad24', 'MongoDB in Action', 0, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker.jpg', 'MongoDB In Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications.', NULL, 'Unavailable'),
-('60a8a5fd585c6a78469fad25', 'Distributed Application Development with PowerBuilder 6.0', 504, '', '', NULL, 'Available'),
-('60a8a5fe585c6a78469fad26', 'Jaguar Development with PowerBuilder 7', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta2.jpg', 'Jaguar Development with PowerBuilder 7 is the definitive guide to distributed application development with PowerBuilder. It is the only book dedicated to preparing PowerBuilder developers for Jaguar applications and has been approved by Sybase engineers and product specialists who build the tools described in the book.', NULL, 'Unavailable'),
-('60a8a5fe585c6a78469fad27', 'Taming Jaguar', 362, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta3.jpg', '', NULL, 'Unavailable'),
-('60a8a5fe585c6a78469fad28', '3D User Interfaces with Java 3D', 520, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barrilleaux.jpg', '', NULL, 'Available'),
+('60a8a5fd585c6a78469fad23', 'Brownfield Application Development in .NET', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/baley.jpg', 'Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you\'ve learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.', '', 'Available'),
+('60a8a5fd585c6a78469fad24', 'MongoDB in Action', 0, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/banker.jpg', 'MongoDB In Action is a comprehensive guide to MongoDB for application developers. The book begins by explaining what makes MongoDB unique and describing its ideal use cases. A series of tutorials designed for MongoDB mastery then leads into detailed examples for leveraging MongoDB in e-commerce, social networking, analytics, and other common applications.', NULL, 'Available'),
+('60a8a5fe585c6a78469fad26', 'Jaguar Development with PowerBuilder 7', 550, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta2.jpg', 'Jaguar Development with PowerBuilder 7 is the definitive guide to distributed application development with PowerBuilder. It is the only book dedicated to preparing PowerBuilder developers for Jaguar applications and has been approved by Sybase engineers and product specialists who build the tools described in the book.', NULL, 'Available'),
+('60a8a5fe585c6a78469fad27', 'Taming Jaguar', 362, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta3.jpg', '', NULL, 'Available'),
 ('60a8a5fe585c6a78469fad29', 'Hibernate in Action', 400, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer.jpg', '\"2005 Best Java Book!\" -- Java Developer\'s Journal', NULL, 'Available'),
 ('60a8a5ff585c6a78469fad2a', 'Hibernate in Action (Chinese Edition)', 400, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer-cn.jpg', '', NULL, 'Available'),
 ('60a8a5ff585c6a78469fad2b', 'Java Persistence with Hibernate', 880, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bauer2.jpg', '\"...this book is the ultimate solution. If you are going to use Hibernate in your application, you have no other choice, go rush to the store and get this book.\" --JavaLobby', NULL, 'Available'),
 ('60a8a5ff585c6a78469fad2c', 'JSTL in Action', 480, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bayern.jpg', '', NULL, 'Available'),
 ('60a8a600585c6a78469fad2d', 'iBATIS in Action', 384, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/begin.jpg', '   Gets new users going and gives experienced users in-depth coverage of advanced features.       Jeff Cunningham, The Weather Channel Interactive', NULL, 'Available'),
-('60a8a600585c6a78469fad2e', 'Designing Hard Software', 350, '', '\"This book is well written ... The author does not fear to be controversial. In doing so, he writes a coherent book.\" --Dr. Frank J. van der Linden, Phillips Research Laboratories', NULL, 'Available'),
 ('60a8a600585c6a78469fad2f', 'Hibernate Search in Action', 488, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bernard.jpg', '\"A great resource for true database independent full text search.\" --Aaron Walker, base2Services', NULL, 'Available'),
 ('60a8a601585c6a78469fad30', 'jQuery in Action', 376, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bibeault.jpg', '\"The best-thought-out and researched piece of literature on the jQuery library.\" --From the forward by John Resig, Creator of jQuery', NULL, 'Available'),
 ('60a8a601585c6a78469fad31', 'jQuery in Action, Second Edition', 488, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/bibeault2.jpg', 'jQuery in Action, Second Edition is a fast-paced introduction to jQuery that will take your JavaScript programming to the next level. An in-depth rewrite of the bestselling first edition, this edition provides deep and practical coverage of the latest jQuery and jQuery UI releases. The book\'s unique \"lab pages\" anchor the explanation of each new concept in a practical example. You\'ll learn how to traverse HTML documents, handle events, perform animations, and add Ajax to your web pages. This comprehensive guide also teaches you how jQuery interacts with other tools and frameworks and how to build jQuery plugins. ', NULL, 'Available'),
@@ -241,9 +214,7 @@ INSERT INTO `books` (`id`, `title`, `pagec`, `thumbnailUrl`, `shortDescription`,
 ('60a8a604585c6a78469fad3d', 'Silverlight 2 in Action', 400, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/campbell.jpg', '   Silverlight 2 in Action gives you a solid, well-thought out and coherent foundation for building RIA web applications, and provides you with lots of technical details without ever becoming cloudy.       Golo Roden, author, trainer and speaker for .NET technologies', NULL, 'Available'),
 ('60a8a605585c6a78469fad3e', 'The Quick Python Book, Second Edition', 360, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ceder.jpg', 'This revision of Manning\'s popular The Quick Python Book offers a clear, crisp introduction to the elegant Python programming language and its famously easy-to-read syntax. Written for programmers new to Python, this updated edition covers features common to other languages concisely, while introducing Python\'s comprehensive standard functions library and unique features in detail.', NULL, 'Available'),
 ('60a8a605585c6a78469fad3f', 'Internet and Intranet Applications with PowerBuilder 6', 390, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/cervenka.jpg', '', NULL, 'Available'),
-('60a8a605585c6a78469fad40', 'Practical Methods for Your Year 2000 Problem', 236, '', 'Practical Methods for Your Year 2000 Problem gives the Year 2000 project team a step-by-step methodology for addressing the Year 2000 problem.', NULL, 'Available'),
 ('60a8a606585c6a78469fad41', 'Mobile Agents', 320, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/cockayne.jpg', 'Mobile Agents is the first book to give the reader the ability to create and use powerful mobile agents on the Internet.', NULL, 'Available'),
-('60a8a606585c6a78469fad42', 'Spring Dynamic Modules in Action', 450, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/cogoluegnes.jpg', 'Spring Dynamic Modules in Action introduces Spring DM and OSGi to Java EE developers and architects. It presents the fundamental concepts of OSGi-based apps and maps them to the familiar ideas of the Spring framework. Then, it engages you with the techniques and concepts you\'ll need to develop stable, flexible enterprise apps. You\'ll learn how to embed a Spring container inside an OSGi bundle, and how Spring DM lets you blend Spring strengths like dependency injection with OSGi-based services. Along the way, you\'ll see how Spring DM handles data access and web-based components, and you\'ll explore topics like unit testing and configuration in an OSGi-based environment.', NULL, 'Available'),
 ('60a8a606585c6a78469fad43', 'SQL Server 2008 Administration in Action', 468, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/colledge.jpg', '', NULL, 'Available'),
 ('60a8a607585c6a78469fad44', 'Android in Practice', 500, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/collins.jpg', 'Android in Practice is treasure trove of Android goodness, with over 100 tested, ready-to-use techniques including complete end-to-end example applications and practical tips for real world mobile application developers. Written by real world Android developers, this book addresses the trickiest questions raised in forums and mailing lists. Using an easy-to-follow problem/solution/discussion format, it dives into important topics not covered in other Android books, like advanced drawing and graphics, testing and instrumentation, building and deploying applications, using alternative languages, and native development.', NULL, 'Available'),
 ('60a8a607585c6a78469fad45', 'Object Oriented Perl', 512, 'https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/conway.jpg', '', NULL, 'Available'),
@@ -316,25 +287,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`book_id`, `category`) VALUES
-('60a8a5fb585c6a78469fad1f', 'Web Development'),
-('60a8a5fc585c6a78469fad20', 'Internet'),
-('60a8a5fc585c6a78469fad21', 'Miscellaneous'),
-('60a8a5fc585c6a78469fad22', 'Microsoft .NET'),
-('60a8a5fd585c6a78469fad23', 'Microsoft'),
-('60a8a5fd585c6a78469fad24', 'Next Generation Databases'),
-('60a8a5fd585c6a78469fad25', 'PowerBuilder'),
-('60a8a5fe585c6a78469fad26', 'Client-Server'),
-('60a8a5fe585c6a78469fad26', 'PowerBuilder'),
 ('60a8a5fe585c6a78469fad27', 'PowerBuilder'),
-('60a8a5fe585c6a78469fad28', 'Computer Graphics'),
-('60a8a5fe585c6a78469fad28', 'Java'),
 ('60a8a5fe585c6a78469fad29', 'Java'),
 ('60a8a5ff585c6a78469fad2a', 'Java'),
 ('60a8a5ff585c6a78469fad2b', 'Java'),
 ('60a8a5ff585c6a78469fad2c', 'Internet'),
 ('60a8a600585c6a78469fad2d', 'Web Development'),
-('60a8a600585c6a78469fad2e', 'Object-Oriented Programming'),
-('60a8a600585c6a78469fad2e', 'S'),
 ('60a8a600585c6a78469fad2f', 'Java'),
 ('60a8a601585c6a78469fad30', 'Web Development'),
 ('60a8a601585c6a78469fad31', 'Java'),
@@ -353,9 +311,7 @@ INSERT INTO `categories` (`book_id`, `category`) VALUES
 ('60a8a604585c6a78469fad3d', 'Microsoft .NET'),
 ('60a8a605585c6a78469fad3e', 'Python'),
 ('60a8a605585c6a78469fad3f', 'PowerBuilder'),
-('60a8a605585c6a78469fad40', 'Business'),
 ('60a8a606585c6a78469fad41', 'Internet'),
-('60a8a606585c6a78469fad42', 'Java'),
 ('60a8a606585c6a78469fad43', 'Microsoft'),
 ('60a8a607585c6a78469fad44', 'Mobile Technology'),
 ('60a8a607585c6a78469fad45', 'Object-Oriented Programming'),
@@ -434,20 +390,6 @@ CREATE TABLE `phieumuon` (
   `tinhtrang` varchar(11) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `phieumuon`
---
-
-INSERT INTO `phieumuon` (`pm_id`, `user`, `book_id`, `ngaymuon`, `ngaytra`, `tinhtrang`) VALUES
-(97, 'admin', '60a8a5fb585c6a78469fad1f', '2021-06-26', '2021-06-30', 'Đang mượn'),
-(98, 'anh', '60a8a5fc585c6a78469fad20', '2021-06-26', '2021-06-30', 'Đang mượn'),
-(99, 'anh', '60a8a5fc585c6a78469fad22', '2021-06-26', '2021-06-30', 'Đang mượn'),
-(100, 'anh', '60a8a5fd585c6a78469fad24', '2021-06-26', NULL, 'Đang mượn'),
-(101, 'anh', '60a8a5fe585c6a78469fad26', '2021-06-26', NULL, 'Đang mượn'),
-(102, 'anh', '60a8a5fe585c6a78469fad27', '2021-06-26', NULL, 'Đang mượn'),
-(105, 'anh', '60a8a5fc585c6a78469fad21', '2021-06-26', '2021-06-30', 'Đang mượn'),
-(106, 'anh', '60a8a5fd585c6a78469fad23', '2021-06-26', NULL, 'Đang mượn');
-
 -- --------------------------------------------------------
 
 --
@@ -521,7 +463,7 @@ ALTER TABLE `thanhvien`
 -- AUTO_INCREMENT for table `phieumuon`
 --
 ALTER TABLE `phieumuon`
-  MODIFY `pm_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `pm_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- Constraints for dumped tables

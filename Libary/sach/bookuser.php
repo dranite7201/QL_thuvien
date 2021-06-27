@@ -101,10 +101,6 @@
                     <div>Trạng Thái: <?php echo $sach['status'] ?></div>
                     <div>Mô Tả: <?php echo $sach["shortDescription"] ?></div>
                     <div>Chi tiết: <?php echo $sach['longDescription'] ?></div>
-                    <form method="post" action="SuaInfoSach.php">
-                        <input type="hidden" name="id" value="<?php echo $sach['id'] ?>" />
-                        <button type="submit" class="btn btn-sm btn-outline-danger">Sửa thông tin</button>
-                    </form>
                 </div>
             <?php } ?>
         </tbody>

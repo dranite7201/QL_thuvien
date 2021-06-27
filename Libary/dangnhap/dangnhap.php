@@ -3,7 +3,7 @@
 session_start();
 
 // Kết nối cơ sở dữ liệu
-$conn = mysqli_connect('localhost', 'root', '', 'qlthuvien') or die('Lỗi kết nối');
+$conn = mysqli_connect('localhost', 'root', '', 'qltv') or die('Lỗi kết nối');
 mysqli_set_charset($conn, "utf8");
 
 if (isset($_POST['dangnhap'])) {
@@ -26,11 +26,11 @@ if (isset($_POST['dangnhap'])) {
 		if ($row['type'] == 0) {
 			$_SESSION["username"] = $row['username'];
 			$_SESSION["password"] = $row['password'];
-			header("location:../sach/admin.php");
+			header("location:../indexAdmin.html");
 		} else {
 			$_SESSION["username"] = $row['username'];
 			$_SESSION["password"] = $row['password'];
-			header("location:mainpage.php");
+			header("location:../index.html");
 		}
 	} else {
 		echo '<script language="javascript">alert("Đăng nhập không thành công"); window.location="../user.html";</script>';

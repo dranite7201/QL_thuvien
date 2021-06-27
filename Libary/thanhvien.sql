@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2021 at 06:12 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Generation Time: Jun 23, 2021 at 04:18 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `qltv`
+-- Database: `qlthuvien`
 --
 
 -- --------------------------------------------------------
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `thanhvien` (
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `hoten` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `hoten` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `ngsinh` date NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `phone` int(15) NOT NULL,

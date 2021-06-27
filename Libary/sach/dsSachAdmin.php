@@ -1,9 +1,9 @@
 <?php
 
-$pdo = new PDO('mysql:host=localhost;port=3306;dbname=data1', 'root', '');
+$pdo = new PDO('mysql:host=localhost;port=3306;dbname=qltv', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$statement = $pdo->prepare("SELECT id, title, category, thumbnailUrl, author_name,shortDescription from books join categories lo on lo.book_id = books.id join authors tg on tg.book_id = books.id GROUP BY books.id");
+$statement = $pdo->prepare("SELECT id, title, category, thumbnailUrl, author_name,shortDescription, status from books join categories lo on lo.book_id = books.id join authors tg on tg.book_id = books.id GROUP BY books.id");
 $statement->execute();
 $books = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -23,9 +23,9 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
-    <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
     <title>Sach</title>
 </head>
 
@@ -33,10 +33,10 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
     <div id="slideout-menu">
         <ul>
             <li>
-                <a href="../index.php">Home</a>
+                <a href="../index.html">Home</a>
             </li>
             <li>
-                <a href="../about.php">About</a>
+                <a href="../about.html">About</a>
             </li>
             <li>
                 <a href="../user.php">
@@ -60,10 +60,10 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <ul>
             <li>
-                <a class="active" href="../index.php">Home</a>
+                <a class="active" href="../index.html">Home</a>
             </li>
             <li>
-                <a href="../about.php">About</a>
+                <a href="../about.html">About</a>
             </li>
             <li>
                 <div id="user-icon">
@@ -91,7 +91,7 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
         </form>
     </div>
     <div>
-        <h1 style="text-align: center; background-color: crimson; color:white">
+        <h1 style="text-align: center; background-color: crimson; color:white; padding-top: 60px">
             LIST BOOKS
         </h1>
     </div>
@@ -124,6 +124,10 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
                         <td style="border-color:firebrick"><?php echo $book['category'] ?></td>
                         <td style="border-color:firebrick"><?php echo $book["shortDescription"] ?></td>
                         <td style="border-color:firebrick">
+                            <form method="post" action="./book.php" style="display: inline-block">
+                                <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Chi tiết sách</button>
+                            </form>
                             <form method="post" action="SuaInfoSach.php" style="display: inline-block">
                                 <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
                                 <button type="submit" class="btn btn-sm btn-outline-primary">Edit</button>
@@ -132,11 +136,16 @@ $categories = $statement1->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
                                 <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                             </form>
-                            <form method="post" action="./book.php" style="display: inline-block">
-                                <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
-                                <button type="submit" class="btn btn-sm btn-outline-danger">Chi tiết sách</button>
-                            </form>
                         </td>
+                        <td>
+                        <?php
+                        if ($book['status'] == "Unavailable") { ?>
+                            <form method="post" action="trasach.php" style="display: inline-block">
+                                <input type="hidden" name="id" value="<?php echo $book['id'] ?>" />
+                                <button type="submit" class="btn btn-sm btn-outline-primary" ?>Trả sách</button>
+                            </form>
+                            </td>
+                        <?php } ?>
                     </tr>
                 <?php } ?>
             </tbody>

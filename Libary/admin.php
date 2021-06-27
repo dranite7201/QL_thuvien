@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
-    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="../style.css">
@@ -20,13 +20,13 @@
     <div id="slideout-menu">
         <ul>
             <li>
-                <a href="../index.php">Home</a>
+                <a href="./index.html">Home</a>
             </li>
             <li>
-                <a href="../about.php">About</a>
+                <a href="./about.html">About</a>
             </li>
             <li>
-                <a href="../user.php">
+                <a href="./user.html">
                     <i class="fas fa-user"></i>
                 </a>
             </li>
@@ -35,10 +35,9 @@
             </li>
         </ul>
     </div>
-
     <nav>
         <div id="logo-img">
-            <a href="index.php">
+            <a href="./index.html">
                 <img src="img/logo.png" alt="">
             </a>
         </div>
@@ -47,14 +46,14 @@
         </div>
         <ul>
             <li>
-                <a class="active" href="../index.php">Home</a>
+                <a class="active" href="../index.html">Home</a>
             </li>
             <li>
-                <a href="../about.php">About</a>
+                <a href="./about.html">About</a>
             </li>
             <li>
                 <div id="user-icon">
-                    <a href="../user.php">
+                    <a href="./user.html">
                         <i class="fas fa-user"></i>
                     </a>
                 </div>
@@ -71,25 +70,23 @@
             </li>
         </ul>
     </nav>
-
     <div id="searchbox">
         <form action="./search.php" method="POST">
             <input type="text" placeholder="Search Here" name="book_name">
         </form>
     </div>
-
     <main>
         <div id="banner">
             <h1>Wohoo Libary</h1><br>
-            <h3>Knowleage is future</h3>
+            <h3>Knowledge is future</h3>
         </div><br>
         <div text-align: center; background:crimson; color: white; border-color: black;>
             <h1 style="background-color: crimson; color:white; border-color:black; text-align: center;">Trang ADMIN</h1>
         </div><br>
         <div id="right-footer">
-            <button style="font-size:large;background-color:white;font-family:Time new roman;text-align:center" class="btn btn-sm btn-success"><a href="./dsSachAdmin.php">ALL BOOKS </a></button>
-            <button style="font-size:large;background-color:white;font-family:Time new roman;text-align:center" class="btn btn-sm btn-success"><a href="./ThemSach.php">THÊM SÁCH </a></button>
-            <button style="font-size:large;background-color:white;font-family:Time new roman;text-align:center" class="btn btn-sm btn-success"><a href="./SuaInfoSach.php">SỬA THÔNG TIN SÁCH </a></button>
+            <button style="font-size:large;background-color:white;font-family:Time new roman;text-align:center" class="btn btn-sm btn-success"><a href="./sach/dsSachAdmin.php">ALL BOOKS </a></button>
+            <button style="font-size:large;background-color:white;font-family:Time new roman;text-align:center" class="btn btn-sm btn-success"><a href="./sach/ThemSach.php">THÊM SÁCH </a></button>
+            <button style="font-size:large;background-color:white;font-family:Time new roman;text-align:center" class="btn btn-sm btn-success"><a href="./sach/SuaInfoSach.php">SỬA THÔNG TIN SÁCH </a></button>
         </div><br><br>
         <footer>
             <div id="left-footer">
@@ -97,10 +94,10 @@
                 <p>
                 <ul>
                     <li>
-                        <a href="index.php">Home</a>
+                        <a href="./index.html">Home</a>
                     </li>
                     <li>
-                        <a href="about.php">About</a>
+                        <a href="./about.html">About</a>
                     </li>
                     <li>
                         <a href="#">Privacy Policy</a>
@@ -111,7 +108,6 @@
                 </ul>
                 </p>
             </div>
-
             <div id="right-footer">
                 <h3>Follow us on</h3>
                 <div id="social-media-footer">
@@ -131,9 +127,7 @@
                 <p>This website is developed by do NOT drop</p>
             </div>
         </footer>
-
     </main>
-
     <script src="main.js"></script>
 </body>
 
