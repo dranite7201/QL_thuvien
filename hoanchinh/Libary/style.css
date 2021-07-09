@@ -2,7 +2,19 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
-
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.item-a{
+  grid-area: header;
+}
+.item-b{
+  grid-area: main;
+}
+.item-c{
+  grid-area: footer;
+}
 h1 {
   padding: 8px;
   background: rgba(255, 0, 0, 0.8);

@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body class="container">
 
     <div id="slideout-menu">
         <ul>
@@ -35,7 +35,7 @@
         </ul>
     </div>
 
-    <nav>
+    <nav class="item-a">
         <div id="logo-img">
             <a href="index.html">
                 <img src="img/logo.png" alt="">
@@ -70,7 +70,7 @@
         <input type="text" placeholder="Search Here">
     </div>
 
-    <main>
+    <main class="item-b">
         <div>
             <center>
                 <form action="./dangnhap/dangnhap.php" method="POST">
@@ -96,48 +96,49 @@
             </center>
         </div>
 
-        <footer>
-            <div id="left-footer">
-                <h3>Quick Links</h3>
-                <p>
+        
+    </main>
+    <footer class="item-c">
+        <div id="left-footer">
+            <h3>Quick Links</h3>
+            <p>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            </p>
+        </div>
+
+        <div id="right-footer">
+            <h3>Follow us on</h3>
+            <div id="social-media-footer">
                 <ul>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
+                        <a href="#">
+                            <i class="fab fa-github"></i>
+                        </a>
                     </li>
                 </ul>
-                </p>
             </div>
+            <p>This website is developed by do NOT drop</p>
+        </div>
+    </footer>
 
-            <div id="right-footer">
-                <h3>Follow us on</h3>
-                <div id="social-media-footer">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-facebook"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <p>This website is developed by do NOT drop</p>
-            </div>
-        </footer>
-
-    </main>
     <scrip src="main.js"></scrip>
 
 </body>
